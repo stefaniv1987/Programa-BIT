@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ingreso al freak parking</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Ingreso</h1>
+    <form action="#" th:action="@{/ingreso}" th:object="${ingresodto}" method="post">
+    	<p>Cedula: <input type="text" th:field="*{cedula}" /></p>
+        <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
