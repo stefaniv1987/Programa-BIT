@@ -9,6 +9,6 @@ public class SmartBiciApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SmartBiciApplication.class, args);
 	}
-
+ 
 }
 
