@@ -75,6 +75,9 @@ public class DatabaseAccess {
 		     }		
 			 
 		}catch(Exception e){
+			
+			e.printStackTrace();
+			
 				
 		}finally {
 			if (stmt != null) {
@@ -84,7 +87,7 @@ public class DatabaseAccess {
 				connection.close();
 			}
 		}
-		
+		System.out.println("lugares disponibles: " + disponibles);
 		return disponibles;
 	}	
 	
