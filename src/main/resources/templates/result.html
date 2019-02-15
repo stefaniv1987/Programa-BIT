@@ -5,8 +5,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Result</h1>
-    <p th:text="'bienvenido: ' + ${ingresodto.cedula}" />
+	<h1>Resultado
+	<style type="text/css">
+body {
+    padding-left: 32em;
+    font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: blue;
+    background-color: #81F781 }
+  ul.navbar {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    width: 9em }
+
+</style></h1>
+    <p th:text="'Bienvenido: ' + ${ingresodto.cedula}" />
     <a href="/smartParking">Volver al inicio</a>
 </body>
 </html>

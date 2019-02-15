@@ -1,11 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Ingreso al freak parking</title>
+    <title>Ingreso a 5Ctrl Smart Parking</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Ingreso</h1>
+	<h1>Ingreso
+	<style type="text/css">
+body {
+    padding-left: 32em;
+    font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: blue;
+    background-color: #81F781 }
+  ul.navbar {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    width: 9em }
+
+</style></h1>
     <form action="#" th:action="@{/ingreso}" th:object="${ingresodto}" method="post">
     	<p>Cedula: <input type="text" th:field="*{cedula}" /></p>
         <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
