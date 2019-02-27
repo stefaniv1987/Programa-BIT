@@ -97,7 +97,7 @@ public class DatabaseAccess {
 	}	
 	
 	
-	public Integer guardarCliente(IngresoDTO ingresodto) throws SQLException{
+	public Integer guardarCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException{
 		
 		Statement stmt = null;
 		Connection connection = null;
@@ -121,11 +121,6 @@ public class DatabaseAccess {
 	preparedStatement.setDate(2,sqlDate);
 			
 	preparedStatement .executeUpdate();
-			
-				
-		}catch(Exception e){
-			
-			e.printStackTrace();
 			
 				
 		}finally {

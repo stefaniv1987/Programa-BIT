@@ -34,21 +34,11 @@ public class ParkingServices {
 	}
 	
 	
-	public String ingresarCliente(IngresoDTO ingresodto) {
+	public String ingresarCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException {
 		
-		try {
-			
-	    	//ANTES DE INGRESAR CLIENTE, TENGO QUE CONSULTAR SI EXISTE LA CEDULA EN CUESTION
-	    	//boolean existe = databaseAccess.existeCliente(ingresodto)
-			//if(!existe)			
+					
 				databaseAccess.guardarCliente(ingresodto);
-			//else return "ya esta registrado."
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+						
 		
 		return null;
 	}

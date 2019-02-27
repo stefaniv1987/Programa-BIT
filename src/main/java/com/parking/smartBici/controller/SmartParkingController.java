@@ -1,5 +1,7 @@
 package com.parking.smartBici.controller;
 
+import java.sql.SQLException;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,17 +54,21 @@ public class SmartParkingController {
     @PostMapping("/ingreso")
     public String greetingSubmit(Model model,@ModelAttribute IngresoDTO ingresodto) {
     
-    	    	
-    	//ANTES DE INGRESAR CLIENTE, TENGO QUE CONSULTAR SI EXISTE LA CEDULA EN CUESTION
-    	//parkingServices.existeCliente(ingresodto)
+		   model.addAttribute("ingresodto", ingresodto);
+
+
     	
-    	String aux = parkingServices.ingresarCliente(ingresodto);
+    	try {
+    			parkingServices.ingresarCliente(ingresodto);
+	        return "result";
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return "error";
+		}
     	
     	
-    	
-    	
-       model.addAttribute("ingresodto", ingresodto);
-        return "result";
+    
     }
     
 	
