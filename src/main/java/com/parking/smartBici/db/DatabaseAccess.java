@@ -4,13 +4,18 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
+import com.parking.smartBici.dto.IngresoDTO;
 
 @Component
 public class DatabaseAccess {
@@ -90,5 +95,51 @@ public class DatabaseAccess {
 		System.out.println("lugares disponibles: " + disponibles);
 		return disponibles;
 	}	
+	
+	
+	public Integer guardarCliente(IngresoDTO ingresodto) throws SQLException{
+		
+		Statement stmt = null;
+		Connection connection = null;
+		ResultSet rs = null;
+		
+		java.util.Date date = new java.util.Date();
+		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
+		
+
+		try {
+			connection = DatabaseAccess.getConnection();
+			stmt = connection.createStatement();
+			
+			String query = "INSERT INTO personas_registro"
+					+ "(CEDULA, FECHA) VALUES"
+					+ "(?,?)";
+			
+		
+	PreparedStatement preparedStatement = connection.prepareStatement(query);
+	preparedStatement.setInt(1, Integer.valueOf(ingresodto.getCedula()));
+	preparedStatement.setDate(2,sqlDate);
+			
+	preparedStatement .executeUpdate();
+			
+				
+		}catch(Exception e){
+			
+			e.printStackTrace();
+			
+				
+		}finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
+		}
+		return 0;
+	}	
+	
+	
+	
 	
 }

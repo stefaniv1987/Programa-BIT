@@ -52,6 +52,15 @@ public class SmartParkingController {
     @PostMapping("/ingreso")
     public String greetingSubmit(Model model,@ModelAttribute IngresoDTO ingresodto) {
     
+    	    	
+    	//ANTES DE INGRESAR CLIENTE, TENGO QUE CONSULTAR SI EXISTE LA CEDULA EN CUESTION
+    	//parkingServices.existeCliente(ingresodto)
+    	
+    	String aux = parkingServices.ingresarCliente(ingresodto);
+    	
+    	
+    	
+    	
        model.addAttribute("ingresodto", ingresodto);
         return "result";
     }

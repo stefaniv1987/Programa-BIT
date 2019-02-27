@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.parking.smartBici.db.DatabaseAccess;
+import com.parking.smartBici.dto.IngresoDTO;
 
 @Service
 public class ParkingServices {
@@ -31,6 +32,27 @@ public class ParkingServices {
 	
 	return cantidad;	
 	}
+	
+	
+	public String ingresarCliente(IngresoDTO ingresodto) {
+		
+		try {
+			
+	    	//ANTES DE INGRESAR CLIENTE, TENGO QUE CONSULTAR SI EXISTE LA CEDULA EN CUESTION
+	    	//boolean existe = databaseAccess.existeCliente(ingresodto)
+			//if(!existe)			
+				databaseAccess.guardarCliente(ingresodto);
+			//else return "ya esta registrado."
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
 	
 	
 
