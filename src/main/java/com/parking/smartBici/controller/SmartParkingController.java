@@ -28,6 +28,9 @@ public class SmartParkingController {
 		super();
 		this.parkingServices=parkingServices;
 	}
+	
+	
+	
 	@GetMapping("/disponibilidad")
     @ResponseBody
     public String disponibilidad() throws JSONException   {
@@ -44,6 +47,8 @@ public class SmartParkingController {
         return "ingreso";
     }
 
+    
+   
     @PostMapping("/ingreso")
     public String greetingSubmit(Model model,@ModelAttribute IngresoDTO ingresodto) {
     
