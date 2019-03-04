@@ -43,8 +43,32 @@ public class ParkingServices {
 		return null;
 	}
 	
+	public int salidaCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException {
+		
+		
+		int salida= databaseAccess.eliminarCliente(ingresodto);
+				
+
+return salida;
+}
+
+	public void incrementarContador() throws SQLException{
+		
+		databaseAccess.incrementarContador();
+		
+	}
+
+public void decrementarContador() throws SQLException{
+		
+		databaseAccess.decrementarContador();
+		
+	}
 	
+public boolean hayLugares() throws SQLException	{
+	boolean hayLugares= databaseAccess.hayLugares();
 	
+	return hayLugares;
+}  
 
 }
 
