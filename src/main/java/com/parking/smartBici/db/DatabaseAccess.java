@@ -255,7 +255,7 @@ public void decrementarContador() throws SQLException{
 		public boolean hayLugares() throws SQLException{
 			
 			int lugares = getLugaresDisponibles();
-			if(lugares >0 && lugares<25)
+			if(lugares >0 && lugares<=25)
 				return true;
 			else
 				return false;
