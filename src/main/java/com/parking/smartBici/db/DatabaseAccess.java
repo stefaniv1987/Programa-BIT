@@ -135,6 +135,131 @@ public class DatabaseAccess {
 	}	
 	
 	
+public Integer eliminarCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException{
+		
+		Statement stmt = null;
+		Connection connection = null;
+		ResultSet rs = null;
+		
+		java.util.Date date = new java.util.Date();
+		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
+		int value=0;
+
+		try {
+			connection = DatabaseAccess.getConnection();
+			stmt = connection.createStatement();
+			
+			String query = "DELETE FROM personas_registro WHERE CEDULA=?";
+			
+		
+	PreparedStatement preparedStatement = connection.prepareStatement(query);
+	preparedStatement.setInt(1, Integer.valueOf(ingresodto.getCedula()));
+				
+	value= preparedStatement.executeUpdate();
+					
+		}finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
+		}
+		return value;
+	}	
 	
+	
+ public void incrementarContador() throws SQLException{
+	
+	int disponibilidad=0;
+
+	disponibilidad = getLugaresDisponibles();
+
+	disponibilidad = disponibilidad + 1; 
+	
+	Statement stmt = null;
+	Connection connection = null;
+	
+	try {
+		connection = DatabaseAccess.getConnection();
+		stmt = connection.createStatement();
+		
+		String query = "UPDATE lugares_disponibles SET DISPONIBILIDAD = ? WHERE ID=1";
+		
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setInt(1,disponibilidad);
+		preparedStatement.executeUpdate();
+	
+	}catch(Exception e) {
+		
+		e.printStackTrace();
+	}
+		
+		finally {
+			if (stmt != null) {
+			
+					stmt.close();
+		
+		}
+			if (connection != null) {
+			
+					connection.close();
+				
+		}
+	}
+}	
+	
+
+
+	
+public void decrementarContador() throws SQLException{
+	
+	int disponibilidad=0;
+
+	disponibilidad = getLugaresDisponibles();
+
+	disponibilidad = disponibilidad - 1; 
+	
+	Statement stmt = null;
+	Connection connection = null;
+	
+	try {
+		connection = DatabaseAccess.getConnection();
+		stmt = connection.createStatement();
+		
+		String query = "UPDATE lugares_disponibles SET DISPONIBILIDAD = ? WHERE ID=1";
+		
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setInt(1,disponibilidad);
+		preparedStatement.executeUpdate();
+	
+	}catch(Exception e) {
+		
+		e.printStackTrace();
+	}
+		
+		finally {
+			if (stmt != null) {
+			
+					stmt.close();
+		
+		}
+			if (connection != null) {
+			
+					connection.close();
+				
+		}
+	}
+}
+
+		public boolean hayLugares() throws SQLException{
+			
+			int lugares = getLugaresDisponibles();
+			if(lugares >0 && lugares<=25)
+				return true;
+			else
+				return false;
+		}
 	
 }
+                              
