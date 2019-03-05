@@ -5,22 +5,6 @@
     <title>Ingreso a 5Ctrl Smart Parking</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
-
-</head>
-
-
-<<<<<<< HEAD
-=======
-<body background = "https://imagizer.imageshack.com/img923/7958/CjOHpC.png" style="background-repeat: no-repeat; background-position: center center;background-size: 100%; " ></body>
->>>>>>> f42a1f596703928dcd6ee79dd4df95c2af3b71bb
-
-<body background = "https://imagizer.imageshack.com/img923/7958/CjOHpC.png" style="background-repeat: no-repeat; background-position: center top;background-attachment: fixed;background-size: 100%;" </>
-
-
-
-	
-	<h1>Ingreso 
-	
 	<style type="text/css">
 	
 body {
@@ -39,14 +23,20 @@ body {
     left: 1em;
     width: 9em }
         
-</style></h1>
+</style>
+
+</head>
+
+<body background = "https://imagizer.imageshack.com/img923/7958/CjOHpC.png" style="background-repeat: no-repeat; background-position: center top;background-attachment: fixed;background-size: 100%;" </>
+
+
+
+	
+	<h1>Ingreso </h1>
 
 
     <form action="#" th:action="@{/ingreso}" th:object="${ingresodto}" method="post">
-    	<p>Cedula: <input autofocus type="text" placeholder="Inserte su cedula"  th:field="*{cedula}" /></p>
-    	 
-         
-       
+    	<p>Cedula: <input autofocus type="text" placeholder="Inserte su cedula"  th:field="*{cedula}" /></p>  
         <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
     </form>
     
