@@ -12,23 +12,28 @@
 
 
 
-<body background = "https://imagizer.imageshack.com/img923/7958/CjOHpC.png" style="background-repeat: no-repeat; background-position: center center;background-size: 100%; " ></body>
-
+<body background = "https://imagizer.imageshack.com/img923/7958/CjOHpC.png" style="background-repeat: no-repeat; background-position: center top;background-attachment: fixed;background-size: 100%;" </>
+ 
+<br> <br/>
+<br> <br/>
+<br> <br/>
+<br> <br/>
+<br> <br/>
+<br> <br/>
 
 	<h1>Error al salir
 	
-<br> <br/>
-<br> <br/>
 
-<br> <br/>
 
 	<style type="text/css">
 body {
-    padding-left: 30em;
     font-family: sans-serif, "sans-serif",
           Times, serif;
         
     color: white;
+    font-size: 1.2vw;
+    text-align: center;
+    display: block;
      }
   ul.navbar {
     position: absolute;
@@ -37,7 +42,7 @@ body {
     width: 9em }
 
 </style></h1>
-    <p th:text="'La cedula NO esta registrada: ' + ${ingresodto.cedula}" />
+    <p th:text="'La cedula ' + ${ingresodto.cedula} + ' NO esta registrada o hubo un error al ingresar los datos'"/>
     <a href="/smartParking">Volver al inicio </a>
     
    

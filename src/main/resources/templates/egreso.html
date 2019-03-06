@@ -9,19 +9,25 @@
 </head>
 
 
-<body background = "https://imagizer.imageshack.com/img923/7958/CjOHpC.png" style="background-repeat: no-repeat; background-position: center center;background-size: 100%; " ></body>
-
-
-
+<body background = "https://imagizer.imageshack.com/img923/7958/CjOHpC.png" style="background-repeat: no-repeat; background-position: center top;background-attachment: fixed;background-size: 100%;" </>
+ 
+<br> <br/>
+<br> <br/>
+<br> <br/>
+<br> <br/>
+<br> <br/>
+<br> <br/>
 
 <h1>Salida 
 	
 	<style type="text/css">
 body {
-   padding-left: 30em;
     font-family: sans-serif, "sans-serif",
           Times, serif;
     color: white;
+    font-size: 1.2vw;
+    text-align: center;
+    display: block;
     }
   ul.navbar {
     position: absolute;
@@ -30,13 +36,12 @@ body {
     width: 9em }
         
 </style></h1>
-<br> <br/>
+
 
     <form action="#" th:action="@{/salida}" th:object="${ingresodto}" method="post">
     	<p>Cedula: <input autofocus type="text" placeholder="Inserte su cedula"  th:field="*{cedula}" /></p>
-    	 <br> <br/>
+    	 
          
-       
         <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
     </form>
     
