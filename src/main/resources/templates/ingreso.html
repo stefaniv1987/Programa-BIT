@@ -41,7 +41,7 @@ body {
 
 
     <form action="#" th:action="@{/ingreso}" th:object="${ingresodto}" method="post">
-    	<p>Cedula: <input  autofocus type="text" placeholder="Inserte su cedula"  th:field="*{cedula}" minlength="1" maxlength="8" required/></p>  
+    	<p>Documento: <input  autofocus type="text" placeholder="Inserte su documento"  th:field="*{cedula}" min="1" maxlength="8" required/></p>  
         <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
         <a href="/smartParking">Volver al inicio </a>
     </form>
