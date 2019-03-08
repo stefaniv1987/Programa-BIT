@@ -39,7 +39,7 @@ body {
 
 
     <form action="#" th:action="@{/salida}" th:object="${ingresodto}" method="post">
-    	<p>Documento: <input autofocus type="text" placeholder="Inserte su Documento"  th:field="*{cedula}"  min="1" maxlength="8" required/></p>
+    	<p>Cedula: <input autofocus type="text" placeholder="Inserte su Cedula" pattern= "[0-9]+" th:field="*{cedula}"  min="1" maxlength="8" required/></p>
     	 
          
         <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
