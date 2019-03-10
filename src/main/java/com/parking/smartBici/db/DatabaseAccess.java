@@ -106,7 +106,7 @@ public class DatabaseAccess {
 		ResultSet rs = null;
 		
 		
-		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
+		//java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
 		
 		try {
 			connection = DatabaseAccess.getConnection();
@@ -119,7 +119,7 @@ public class DatabaseAccess {
 		
 	PreparedStatement preparedStatement = connection.prepareStatement(query);
 	preparedStatement.setInt(1, Integer.valueOf(ingresodto.getCedula()));
-	preparedStatement.setDate(2,sqlDate);
+	preparedStatement.setString(2,date.toString());
 			
 	preparedStatement .executeUpdate();
 			
@@ -269,7 +269,7 @@ public void decrementarContador() throws SQLException{
 			Connection connection = null;
 			ResultSet rs = null;
 			
-			java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
+			//java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
 			
 
 			try {
@@ -283,7 +283,7 @@ public void decrementarContador() throws SQLException{
 			
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setInt(1, Integer.valueOf(ingresodto.getCedula()));
-		preparedStatement.setDate(2,sqlDate);
+		preparedStatement.setString(2,date.toString());
 				
 		preparedStatement .executeUpdate();
 				
