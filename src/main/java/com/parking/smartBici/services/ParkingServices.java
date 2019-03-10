@@ -41,10 +41,10 @@ public class ParkingServices {
 	
 	
 	public String ingresarCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException {
-			
-		Date input = new Date();
-		Instant instant = input.toInstant();
-		Date date = Date.from(instant);
+					
+		Instant now = Instant.now().minusSeconds(10800);
+
+		Date date = Date.from(now);
 							
 		databaseAccess.guardarCliente(ingresodto,date);
 		databaseAccess.insertarHistorico(ingresodto,date);				
