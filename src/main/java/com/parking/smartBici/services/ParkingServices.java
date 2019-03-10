@@ -36,9 +36,9 @@ public class ParkingServices {
 	
 	public String ingresarCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException {
 		
-					
-				databaseAccess.guardarCliente(ingresodto);
-						
+		java.util.Date date = new java.util.Date();	
+				databaseAccess.guardarCliente(ingresodto,date);
+				databaseAccess.insertarHistorico(ingresodto,date);				
 		
 		return null;
 	}
@@ -47,6 +47,7 @@ public class ParkingServices {
 		
 		
 		int salida= databaseAccess.eliminarCliente(ingresodto);
+		
 				
 
 return salida;
