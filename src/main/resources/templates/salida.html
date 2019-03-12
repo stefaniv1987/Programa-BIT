@@ -4,6 +4,8 @@
     <title>Getting Started: Handling Form Submission</title>
     
 
+	<link href="https://fonts.googleapis.com/css?family=Happy+Monkey" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Capriola&effect=shadow-multiple" rel="stylesheet" type="text/css">
 
 
 
@@ -20,18 +22,29 @@
 <br> <br/>
 <br> <br/>
 
-	<h1>Gracias
+
+	<h1><div class="font-effect-shadow-multiple">Gracias!<div></h1>
 	
 	<style type="text/css">
 body {
-    font-family: sans-serif, "sans-serif",
+    font-family: font-family: Capriola, sans-serif, sans-serif, "sans-serif",
           Times, serif;
         
-    color: white;
+    color: black;
     font-size: 1.2vw;
     text-align: center;
     display: block;
      }
+          
+          
+    h1 {font-family: Capriola, sans-serif}
+    
+    p {font-family: 'Happy Monkey', cursive, sans-serif}
+
+    a {font-family: 'Happy Monkey', cursive, sans-serif}
+    
+    
+    
   ul.navbar {
     position: absolute;
     top: 2em;
@@ -39,7 +52,7 @@ body {
     width: 9em }
 
 </style></h1>
-    <p th:text="'Vuelva pronto: ' + ${ingresodto.cedula}" />
+    <p th:text="'Vuelve pronto: ' + ${ingresodto.cedula}" />
     <a href="/smartParking">Volver al inicio </a>
     
    

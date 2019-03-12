@@ -1,35 +1,51 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	
+
+    <link href="https://fonts.googleapis.com/css?family=Happy+Monkey" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Capriola&effect=shadow-multiple" rel="stylesheet" type="text/css">
+
+    
+        
+    	
     <title>Ingreso a 5Ctrl Smart Parking</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
-	<style type="text/css">
+	<style>
 	
-body {
-   font-family: sans-serif, "sans-serif",
+	
+	
+    body {
+        font-family: font-family: Capriola, sans-serif, sans-serif, "sans-serif",
           Times, serif;
-    color: white;
-    font-size: 1.2vw;
-    text-align: center;
-    display: block;
+        color: black;
+        font-size: 1.2vw;
+        text-align: center;
+        display: block;
+        }
     
-	
-    }
-  ul.navbar {
-    position: absolute;
-    top: 2em;
-    left: 1em;
-    width: 9em }
+
+    h1 {font-family: Capriola, sans-serif}
+    
+    p {font-family: 'Happy Monkey', cursive, sans-serif}
+
+    a {font-family: 'Happy Monkey', cursive, sans-serif}
+    
+
+    ul.navbar {
+        position: absolute;
+        top: 2em;
+        left: 1em;
+        width: 9em }
         
-</style>
+    </style>
 
 </head>
 
-<body background = "https://imagizer.imageshack.com/img924/6263/Ah3eBq.png" style="background-repeat: no-repeat; background-position: center top;background-attachment: fixed;background-size: 100%;" ></body>
+<body background = "https://imagizer.imageshack.com/img924/6263/Ah3eBq.png" style="background-repeat: no-repeat; background-position: center; background-attachment: fixed; background-size: cover;" ></body>
 
 
+<br> <br/>
 <br> <br/>
 <br> <br/>
 <br> <br/>
@@ -37,13 +53,19 @@ body {
 <br> <br/>
 <br> <br/>
 	
-	<h1>Ingreso </h1>
+
+<h1><div class="font-effect-shadow-multiple">Ingreso<div></h1>
+	
 
 
     <form action="#" th:action="@{/ingreso}" th:object="${ingresodto}" method="post">
-    	<p>Cedula: <input  autofocus type="text" placeholder="Inserte su cedula" pattern= "[0-9]+" th:field="*{cedula}" min="1" maxlength="8" required/></p>  
+    
+     
+        <p>Cedula: <input  autofocus type="text" placeholder="Inserte su cedula"  th:field="*{cedula}"></p>  
+               
         <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
         <a href="/smartParking">Volver al inicio </a>
+        
     </form>
     
 

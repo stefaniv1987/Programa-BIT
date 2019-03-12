@@ -4,20 +4,30 @@
 	
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Happy+Monkey" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Capriola&effect=shadow-multiple" rel="stylesheet" type="text/css">
+    
 
     
 	<style type="text/css">
 	
 body {
-    font-family: sans-serif, "sans-serif",
+    font-family: font-family: Capriola, sans-serif, sans-serif, "sans-serif",
           Times, serif;
-    color: white;
+    color: black;
     font-size: 1.2vw;
     text-align: center;
     display: block;
-    
-    
+        
      }
+     
+    h1 {font-family: Capriola, sans-serif}
+    
+    p {font-family: 'Happy Monkey', cursive, sans-serif}
+
+    a {font-family: 'Happy Monkey', cursive, sans-serif}
+    
   ul.navbar {
     position: absolute;
     top: 2em;
@@ -28,7 +38,7 @@ body {
 
 </head>
 
-<body background = "https://imagizer.imageshack.com/img924/6263/Ah3eBq.png" style="background-repeat: no-repeat; background-position: center top;background-attachment: fixed;background-size: 100%;" ></body>
+<body background = "https://imagizer.imageshack.com/img924/6263/Ah3eBq.png" style="background-repeat: no-repeat; background-position: center; background-attachment: fixed; background-size: cover;" ></body>
 
 
 <br> <br/>
@@ -37,9 +47,11 @@ body {
 <br> <br/>
 <br> <br/>
 <br> <br/>
+<br> <br/>
 
-	<h1>Welcome</h1>
-    <p th:text="'Bienvenido: ' + ${ingresodto.cedula}" />
+	<h1><div class="font-effect-shadow-multiple">Listo!<div></h1>
+	
+    <p th:text="'Ya puedes ingresar: ' + ${ingresodto.cedula}" />
     <a href="/smartParking">Volver al inicio </a>
     
    
