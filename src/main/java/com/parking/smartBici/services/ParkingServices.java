@@ -1,6 +1,12 @@
 package com.parking.smartBici.services;
 
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,10 +41,13 @@ public class ParkingServices {
 	
 	
 	public String ingresarCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException {
-		
 					
-				databaseAccess.guardarCliente(ingresodto);
-						
+		Instant now = Instant.now().minusSeconds(10800);
+
+		Date date = Date.from(now);
+							
+		databaseAccess.guardarCliente(ingresodto,date);
+		databaseAccess.insertarHistorico(ingresodto,date);				
 		
 		return null;
 	}
@@ -47,6 +56,7 @@ public class ParkingServices {
 		
 		
 		int salida= databaseAccess.eliminarCliente(ingresodto);
+		
 				
 
 return salida;

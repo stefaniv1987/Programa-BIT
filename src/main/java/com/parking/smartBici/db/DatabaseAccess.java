@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -97,16 +99,15 @@ public class DatabaseAccess {
 	}	
 	
 	
-	public Integer guardarCliente(IngresoDTO ingresodto) throws SQLException, ClassNotFoundException{
+	public Integer guardarCliente(IngresoDTO ingresodto,Date date) throws SQLException, ClassNotFoundException{
 		
 		Statement stmt = null;
 		Connection connection = null;
 		ResultSet rs = null;
 		
-		java.util.Date date = new java.util.Date();
-		java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
 		
-
+		//java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
+		
 		try {
 			connection = DatabaseAccess.getConnection();
 			stmt = connection.createStatement();
@@ -118,7 +119,7 @@ public class DatabaseAccess {
 		
 	PreparedStatement preparedStatement = connection.prepareStatement(query);
 	preparedStatement.setInt(1, Integer.valueOf(ingresodto.getCedula()));
-	preparedStatement.setDate(2,sqlDate);
+	preparedStatement.setString(2,date.toString());
 			
 	preparedStatement .executeUpdate();
 			
@@ -261,5 +262,44 @@ public void decrementarContador() throws SQLException{
 				return false;
 		}
 	
+		
+		public Integer insertarHistorico(IngresoDTO ingresodto, Date date) throws SQLException, ClassNotFoundException{
+			
+			Statement stmt = null;
+			Connection connection = null;
+			ResultSet rs = null;
+			
+			//java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 
+			
+
+			try {
+				connection = DatabaseAccess.getConnection();
+				stmt = connection.createStatement();
+				
+				String query = "INSERT INTO registro_historico"
+						+ "(CEDULA, FECHA) VALUES"
+						+ "(?,?)";
+				
+			
+		PreparedStatement preparedStatement = connection.prepareStatement(query);
+		preparedStatement.setInt(1, Integer.valueOf(ingresodto.getCedula()));
+		preparedStatement.setString(2,date.toString());
+				
+		preparedStatement .executeUpdate();
+				
+					
+			}finally {
+				if (stmt != null) {
+					stmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			}
+			return 0;
+		}	
+		
+		
+		
 }
                               
