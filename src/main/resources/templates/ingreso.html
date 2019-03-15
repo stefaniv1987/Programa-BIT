@@ -27,9 +27,9 @@
 
     h1 {font-family: Capriola, sans-serif}
     
-    p {font-family: 'Happy Monkey', cursive, sans-serif}
+    p {font-family: 'Happy Monkey', cursive, sans-serif; font-size: 1.4vw}
 
-    a {font-family: 'Happy Monkey', cursive, sans-serif}
+    a {font-family: 'Happy Monkey', cursive, sans-serif; font-size: 1.4vw}
     
 
     ul.navbar {
@@ -61,9 +61,9 @@
     <form action="#" th:action="@{/ingreso}" th:object="${ingresodto}" method="post">
     
      
-        <p>Cedula: <input  autofocus type="text" placeholder="Inserte su cedula"  th:field="*{cedula}"></p>  
+        <p>Cédula: <input  autofocus type="text" placeholder="12345678" pattern="[0-9]+" minlength="8" maxlength="8" required  th:field="*{cedula}"></p>  
                
-        <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
+        <p><input type="submit" value="Enviar" style="font-size: 18pt; font-family: Capriola; width:130px; height:46px" /> <input type="reset" value="Borrar" style="font-size: 18pt; font-family: Capriola; width:130px; height:46px" /></p>
         <a href="/smartParking">Volver al inicio </a>
         
     </form>
