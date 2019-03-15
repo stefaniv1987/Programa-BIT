@@ -61,9 +61,9 @@
     <form action="#" th:action="@{/ingreso}" th:object="${ingresodto}" method="post">
     
      
-        <p>Cedula: <input  autofocus type="text" placeholder="12345678" pattern="[0-9]+" min="1" maxlength="8" required  th:field="*{cedula}"></p>  
+        <p>Cédula: <input  autofocus type="text" placeholder="12345678" pattern="[0-9]+" min="7" maxlength="8" required  th:field="*{cedula}"></p>  
                
-        <p><input type="submit" value="Enviar" /> <input type="reset" value="Reset" /></p>
+        <p><input type="submit" value="Enviar" /> <input type="reset" value="Borrar" /></p>
         <a href="/smartParking">Volver al inicio </a>
         
     </form>
