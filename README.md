@@ -2,10 +2,6 @@
 
 Proyecto 1er año - Equipo 5Ctrl
 
-## Manual de uso y ejecución
-### Se asumió la siguiente lógica para desarrollar la aplicación
-
-
 
 ## Ambiente y pre condiciones de ambiente
 
