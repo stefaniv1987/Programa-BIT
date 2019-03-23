@@ -43,7 +43,7 @@ mvn spring-boot:run
 Se debe de abrir browser ingresando la siguiente URL: http://localhost:8080/smartParking/
 
 ### Persistencia
- Smart-bici esta apuntando a la base productiva alojada en Heroku por ende no es necesario configurar la persistencia localmente
+ Smart-bici esta apuntando a la base productiva alojada en Heroku por ende no es necesario configurar la persistencia localmente, por ende corriendo local no se veran los lugares disponibles
  
 
 
