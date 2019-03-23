@@ -52,10 +52,17 @@ mvn springBoot:run
 
 
 ### Terminal
-Puede seguir el log trace de la aplicación en el terminal donde ejecutó `mvn springBoont:run`.
-
+Puede seguir el log trace de la aplicación en el terminal donde ejecutó `mvn spring-boot:run`.
 ```sh-session
-
+2019-03-23 00:39:10.486  INFO 13272 --- [           main] o.a.c.c.C.[.[localhost].[/smartParking]  : Initializing Spring embedded WebApplicationContext
+2019-03-23 00:39:10.487  INFO 13272 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5868 ms
+2019-03-23 00:39:11.518  INFO 13272 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-23 00:39:12.200  INFO 13272 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-03-23 00:39:13.402  INFO 13272 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/smartParking'
+2019-03-23 00:39:13.409  INFO 13272 --- [           main] c.p.smartBici.SmartBiciApplication       : Started SmartBiciApplication in 11.204 seconds (JVM running for 26.431)
+2019-03-23 00:39:40.662  INFO 13272 --- [nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/smartParking]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-23 00:39:40.663  INFO 13272 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-23 00:39:40.834  INFO 13272 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 171 ms
 ```
 
 Gracias 
