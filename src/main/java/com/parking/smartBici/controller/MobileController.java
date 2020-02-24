@@ -44,49 +44,57 @@ public class MobileController {
 	}
 
 	@RequestMapping(value = "/entrar", method = RequestMethod.POST)
-	public ResponseEntity<String> entrar(@RequestParam(name = "cedula") String cedula) {
+	public MobileDTO entrar(@RequestParam(name = "cedula") String cedula) {
+
+		MobileDTO mobileDTO = new MobileDTO();
+		mobileDTO.setCedula(cedula);
+		mobileDTO.setIngreso(false);
 
 		try {
 			IngresoDTO ingresodto = new IngresoDTO();
 			ingresodto.setCedula(cedula);
 
 			boolean hayLugares = parkingServices.hayLugares();
-
 			if (hayLugares == true) {
 				parkingServices.ingresarCliente(ingresodto);
 				parkingServices.decrementarContador();
-
-				return new ResponseEntity<>("Ingreso autorizado", HttpStatus.OK);
+				mobileDTO.setIngreso(true);
+				
+				return mobileDTO;
 
 			} else {
-				return new ResponseEntity<>("Ingreso NO autorizado, no hay lugares", HttpStatus.BAD_REQUEST);
+				return mobileDTO;
 			}
 
 		} catch (Exception e) {
-			return new ResponseEntity<>("La cedula ya esta registrada", HttpStatus.INTERNAL_SERVER_ERROR);
+			return mobileDTO;
 		}
 
 	}
 
 	@RequestMapping(value = "/salir", method = RequestMethod.POST)
-	public ResponseEntity<String> salir(@RequestParam(name = "cedula") String cedula) {
+	public MobileDTO salir(@RequestParam(name = "cedula") String cedula) {
 
 		IngresoDTO ingresodto= new IngresoDTO();
 		ingresodto.setCedula(cedula);
 		
+		MobileDTO mobileDTO = new MobileDTO();
+		mobileDTO.setSalida(false);
+		mobileDTO.setCedula(cedula);
 		
 		try {
 			int salida = parkingServices.salidaCliente(ingresodto);
 			if (salida == 1) {
 				parkingServices.incrementarContador();
 				
-				return new ResponseEntity<>("Salida autorizada", HttpStatus.OK);
+				mobileDTO.setSalida(true);
+				return mobileDTO;
 			}
 			else
-				return new ResponseEntity<>("Cedula no registrada, error", HttpStatus.BAD_REQUEST);
+				return mobileDTO;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			return new ResponseEntity<>("Internal error", HttpStatus.INTERNAL_SERVER_ERROR);
+			return mobileDTO;
 		}
 		
 		

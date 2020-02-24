@@ -3,6 +3,9 @@ package com.parking.smartBici.dto;
 public class MobileDTO {
 	
 private Integer lugaresDisponibles;
+private Boolean ingreso;
+private Boolean salida;
+private String cedula;
 
 
 public MobileDTO() {
@@ -16,6 +19,30 @@ public Integer getLugaresDisponibles() {
 
 public void setLugaresDisponibles(Integer lugaresDisponibles) {
 	this.lugaresDisponibles = lugaresDisponibles;
+}
+
+public Boolean getIngreso() {
+	return ingreso;
+}
+
+public void setIngreso(Boolean ingreso) {
+	this.ingreso = ingreso;
+}
+
+public String getCedula() {
+	return cedula;
+}
+
+public void setCedula(String cedula) {
+	this.cedula = cedula;
+}
+
+public Boolean getSalida() {
+	return salida;
+}
+
+public void setSalida(Boolean salida) {
+	this.salida = salida;
 }
 
 
